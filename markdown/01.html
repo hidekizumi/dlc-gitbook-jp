@@ -1,0 +1,419 @@
+
+<!DOCTYPE HTML>
+<html lang="ja" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>1. 仮想環境の立ち上げ · DeepLabCut Tutorial</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        
+        
+        
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-anchors/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-back-to-top-button/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-expand-active-chapter/expand-active-chapter.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-collapsible-chapters/collapsible-chapters.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-prism/prism.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="02.html" />
+    
+    
+    <link rel="prev" href="../" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="検索すると入力" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    Introduction
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.2" data-path="01.html">
+            
+                <a href="01.html">
+            
+                    
+                    1. 仮想環境の立ち上げ
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="02.html">
+            
+                <a href="02.html">
+            
+                    
+                    2. プロジェクトの作成
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="03.html">
+            
+                <a href="03.html">
+            
+                    
+                    3. config.yamlの編集
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" data-path="04.html">
+            
+                <a href="04.html">
+            
+                    
+                    4. フレームの抽出とラベル付け
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.5.1" data-path="04_add.html">
+            
+                <a href="04_add.html">
+            
+                    
+                    extract_frames()関数の説明
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6" data-path="05.html">
+            
+                <a href="05.html">
+            
+                    
+                    5. ラベル付けの方法
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7" data-path="06.html">
+            
+                <a href="06.html">
+            
+                    
+                    6. 再ラベル付けとラベル付け画像の確認
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8" data-path="07.html">
+            
+                <a href="07.html">
+            
+                    
+                    7. Google Colaboratory
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9" data-path="08.html">
+            
+                <a href="08.html">
+            
+                    
+                    8. 一定の学習後に性能を上げたい場合
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            GitBookで公開 
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >1. 仮想環境の立ち上げ</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="1-&#x4EEE;&#x60F3;&#x74B0;&#x5883;&#x306E;&#x7ACB;&#x3061;&#x4E0A;&#x3052;"><a name="1-&#x4EEE;&#x60F3;&#x74B0;&#x5883;&#x306E;&#x7ACB;&#x3061;&#x4E0A;&#x3052;" class="plugin-anchor" href="#1-&#x4EEE;&#x60F3;&#x74B0;&#x5883;&#x306E;&#x7ACB;&#x3061;&#x4E0A;&#x3052;"><i class="fa fa-link" aria-hidden="true"></i></a>1. &#x4EEE;&#x60F3;&#x74B0;&#x5883;&#x306E;&#x7ACB;&#x3061;&#x4E0A;&#x3052;</h1>
+<h2 id="11-&#x7BA1;&#x7406;&#x8005;&#x3068;&#x3057;&#x3066;anaconda-command-prompt&#x3092;&#x7ACB;&#x3061;&#x4E0A;&#x3052;"><a name="11-&#x7BA1;&#x7406;&#x8005;&#x3068;&#x3057;&#x3066;anaconda-command-prompt&#x3092;&#x7ACB;&#x3061;&#x4E0A;&#x3052;" class="plugin-anchor" href="#11-&#x7BA1;&#x7406;&#x8005;&#x3068;&#x3057;&#x3066;anaconda-command-prompt&#x3092;&#x7ACB;&#x3061;&#x4E0A;&#x3052;"><i class="fa fa-link" aria-hidden="true"></i></a>1.1 &#x7BA1;&#x7406;&#x8005;&#x3068;&#x3057;&#x3066;Anaconda Command Prompt&#x3092;&#x7ACB;&#x3061;&#x4E0A;&#x3052;</h2>
+<p>Annaconda Command Prompt&#x3092;&#x958B;&#x304F;&#x969B;&#x306B;&#x3001;&#x53F3;&#x30AF;&#x30EA;&#x30C3;&#x30AF;&#x3067;&#x3001;<code>&#x305D;&#x306E;&#x4ED6; -&gt; &#x7BA1;&#x7406;&#x8005;&#x3068;&#x3057;&#x3066;&#x5B9F;&#x884C;</code>&#x3000;&#x3092;&#x62BC;&#x3057;&#x307E;&#x3059;&#x3002;</p>
+<h2 id="12-&#x4EEE;&#x60F3;&#x74B0;&#x5883;&#x306E;&#x7ACB;&#x3061;&#x4E0A;&#x3052;"><a name="12-&#x4EEE;&#x60F3;&#x74B0;&#x5883;&#x306E;&#x7ACB;&#x3061;&#x4E0A;&#x3052;" class="plugin-anchor" href="#12-&#x4EEE;&#x60F3;&#x74B0;&#x5883;&#x306E;&#x7ACB;&#x3061;&#x4E0A;&#x3052;"><i class="fa fa-link" aria-hidden="true"></i></a>1.2 &#x4EEE;&#x60F3;&#x74B0;&#x5883;&#x306E;&#x7ACB;&#x3061;&#x4E0A;&#x3052;</h2>
+<p>&#x4E0B;&#x306E;&#x30B3;&#x30FC;&#x30C9;&#x306F;&#x305D;&#x306E;&#x307E;&#x307E;&#x4F7F;&#x3048;&#x307E;&#x3059;&#x3002;</p>
+<pre class="language-"><code class="lang-bash">conda activate deeplabcut
+</code></pre>
+<h2 id="13-&#x4F5C;&#x696D;&#x30C7;&#x30A3;&#x30EC;&#x30AF;&#x30C8;&#x30EA;&#x3078;"><a name="13-&#x4F5C;&#x696D;&#x30C7;&#x30A3;&#x30EC;&#x30AF;&#x30C8;&#x30EA;&#x3078;" class="plugin-anchor" href="#13-&#x4F5C;&#x696D;&#x30C7;&#x30A3;&#x30EC;&#x30AF;&#x30C8;&#x30EA;&#x3078;"><i class="fa fa-link" aria-hidden="true"></i></a>1.3 &#x4F5C;&#x696D;&#x30C7;&#x30A3;&#x30EC;&#x30AF;&#x30C8;&#x30EA;&#x3078;</h2>
+<p>&#x7BA1;&#x7406;&#x8005;&#x3068;&#x3057;&#x3066;&#x5B9F;&#x884C;&#x3092;&#x3059;&#x308B;&#x3068;&#x3001;&#x304A;&#x305D;&#x3089;&#x304F; <code>C:\Windows\system32</code> &#x304C;&#x30AB;&#x30EC;&#x30F3;&#x30C8;&#x30C7;&#x30A3;&#x30EC;&#x30AF;&#x30C8;&#x30EA;&#x3068;&#x306A;&#x308A;&#x307E;&#x3059;&#x3002;&#x88FD;&#x4F5C;&#x7269;&#x304C;&#x3054;&#x3061;&#x3083;&#x3054;&#x3061;&#x3083;&#x3059;&#x308B;&#x53EF;&#x80FD;&#x6027;&#x304C;&#x3042;&#x308B;&#x306E;&#x3067;&#x3001;&#x304D;&#x3061;&#x3093;&#x3068;&#x4F5C;&#x696D;&#x30C7;&#x30A3;&#x30EC;&#x30AF;&#x30C8;&#x30EA;&#x3092;&#x4F5C;&#x308A;&#x3001;&#x305D;&#x3053;&#x306B;&#x79FB;&#x52D5;&#x3057;&#x3066;&#x304A;&#x304D;&#x307E;&#x3059;&#x3002;</p>
+<p>&#x4F8B;&#x3048;&#x3070;&#x3001;UserName&#x306E;Documents&#x30D5;&#x30A9;&#x30EB;&#x30C0;&#x306E;&#x4E2D;&#x306B;&#x3042;&#x308B;DeepLabCut&#x3068;&#x3044;&#x3046;&#x3068;&#x3053;&#x308D;&#x3067;&#x4F5C;&#x696D;&#x3092;&#x3057;&#x305F;&#x3044;&#x6642;&#x306F;&#x3001;&#x6B21;&#x306E;&#x3088;&#x3046;&#x306B;&#x3057;&#x3066;&#x304F;&#x3060;&#x3055;&#x3044;&#x3002;</p>
+<pre class="language-"><code class="lang-bash"><span class="token builtin class-name">cd</span> C:<span class="token punctuation">\</span>Users<span class="token punctuation">\</span>UserName<span class="token punctuation">\</span>Documents<span class="token punctuation">\</span>DeepLabCut
+</code></pre>
+<p>&#x4ECA;&#x5F8C;&#x306F;&#x3001;</p>
+<ul>
+<li>C drive<ul>
+<li>Users<ul>
+<li>UserName<ul>
+<li>Documents<ul>
+<li>DeepLabCut</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p>&#x3068;&#x3044;&#x3046;&#x74B0;&#x5883;&#x3092;&#x4F8B;&#x3068;&#x3057;&#x3066;&#x3001;&#x3053;&#x306E;gitbook&#x3092;&#x8A18;&#x8FF0;&#x3057;&#x3066;&#x3044;&#x304D;&#x307E;&#x3059;&#x3002;</p>
+<h2 id="14-&#x4F5C;&#x696D;&#x30C7;&#x30A3;&#x30EC;&#x30AF;&#x30C8;&#x30EA;&#x306B;&#x52D5;&#x753B;&#x3092;&#x7F6E;&#x304F;"><a name="14-&#x4F5C;&#x696D;&#x30C7;&#x30A3;&#x30EC;&#x30AF;&#x30C8;&#x30EA;&#x306B;&#x52D5;&#x753B;&#x3092;&#x7F6E;&#x304F;" class="plugin-anchor" href="#14-&#x4F5C;&#x696D;&#x30C7;&#x30A3;&#x30EC;&#x30AF;&#x30C8;&#x30EA;&#x306B;&#x52D5;&#x753B;&#x3092;&#x7F6E;&#x304F;"><i class="fa fa-link" aria-hidden="true"></i></a>1.4 &#x4F5C;&#x696D;&#x30C7;&#x30A3;&#x30EC;&#x30AF;&#x30C8;&#x30EA;&#x306B;&#x52D5;&#x753B;&#x3092;&#x7F6E;&#x304F;</h2>
+<p>&#x3053;&#x308C;&#x306F;&#x5FC5;&#x9808;&#x3067;&#x306F;&#x3042;&#x308A;&#x307E;&#x305B;&#x3093;&#x304C;&#x3001;&#x4F5C;&#x696D;&#x30C7;&#x30A3;&#x30EC;&#x30AF;&#x30C8;&#x30EA;&#x306B;&#x52D5;&#x753B;&#x3092;&#x8907;&#x88FD;&#x3084;&#x79FB;&#x52D5;&#x306A;&#x3069;&#x3057;&#x3066;&#x7F6E;&#x304F;&#x3068;&#x3084;&#x308A;&#x3084;&#x3059;&#x3044;&#x3067;&#x3059;&#x3002;&#x3053;&#x306E;gitbook&#x306F;&#x3001;&#x4F5C;&#x696D;&#x30C7;&#x30A3;&#x30EC;&#x30AF;&#x30C8;&#x30EA;&#x5185;&#x306B;&#x52D5;&#x753B;&#x3092;&#x7F6E;&#x3044;&#x305F;&#x3068;&#x3057;&#x3066;&#x66F8;&#x3044;&#x3066;&#x3044;&#x304D;&#x307E;&#x3059;&#x3002;</p>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="../" class="navigation navigation-prev " aria-label="Previous page: Introduction">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="02.html" class="navigation navigation-next " aria-label="Next page: 2. プロジェクトの作成">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"1. 仮想環境の立ち上げ","level":"1.2","depth":1,"next":{"title":"2. プロジェクトの作成","level":"1.3","depth":1,"path":"markdown/02.md","ref":"markdown/02.md","articles":[]},"previous":{"title":"Introduction","level":"1.1","depth":1,"path":"README.md","ref":"README.md","articles":[]},"dir":"ltr"},"config":{"plugins":["hide-published-with","anchors","back-to-top-button","expand-active-chapter","collapsible-chapters","copy-code-button","prism","-highlight"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"prism":{},"search":{},"collapsible-chapters":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"hide-published-with":{},"fontsettings":{"theme":"white","family":"sans","size":2},"back-to-top-button":{},"expand-active-chapter":{},"copy-code-button":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"anchors":{}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"DeepLabCut Tutorial","language":"ja","gitbook":"*","description":"Tutorial of DeepLabCut"},"file":{"path":"markdown/01.md","mtime":"2021-09-17T09:28:38.636Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2021-09-24T07:50:22.571Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-hide-published-with/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-back-to-top-button/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-expand-active-chapter/expand-active-chapter.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-collapsible-chapters/collapsible-chapters.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-copy-code-button/toggle.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+
